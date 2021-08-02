@@ -9,6 +9,14 @@ Ghost Hunter Crop Game Save Editor.
 
 __Backup your original `save.sav` file before doing anything__
 
+## Planed features
+- :heavy_check_mark: Edit Player Name, Money, EXP
+- :heavy_check_mark: Showing Estimated Player Levels
+- :heavy_check_mark: Edit Items Amount In Inventory
+- :heavy_check_mark: Maxed out all items
+- [:rocket: In Progress] Select Player Character
+- [:rocket: In Progress] Select Player Color
+
 ## Disclaimer
 ```
 Nothing
