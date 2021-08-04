@@ -1,5 +1,7 @@
-# GhostHunterCrop-SaveEditor
-Ghost Hunter Crop Game Save Editor.
+# Forgive me for name typos 😥
+
+# GhostHunterCorp-SaveEditor
+Ghost Hunter Corp Game Save Editor.
 
 ## How to use
 1. Open save file.
