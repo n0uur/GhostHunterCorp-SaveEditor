@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text.Json;
 using Newtonsoft.Json;
 
-namespace GhostHunterCrop_SaveEditor
+namespace GhostHunterCorp_SaveEditor
 {
     public struct SaveData
     {

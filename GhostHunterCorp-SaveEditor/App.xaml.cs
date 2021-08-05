@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using Microsoft.Win32;
 
-namespace GhostHunterCrop_SaveEditor
+namespace GhostHunterCorp_SaveEditor
 {
     /// <summary>
     /// Interaction logic for App.xaml

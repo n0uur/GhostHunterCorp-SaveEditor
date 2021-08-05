@@ -1,7 +1,7 @@
-﻿<Application x:Class="GhostHunterCrop_SaveEditor.App"
+﻿<Application x:Class="GhostHunterCorp_SaveEditor.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:GhostHunterCrop_SaveEditor"
+             xmlns:local="clr-namespace:GhostHunterCorp_SaveEditor"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          

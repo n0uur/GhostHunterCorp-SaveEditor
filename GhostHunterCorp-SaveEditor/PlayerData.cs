@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace GhostHunterCrop_SaveEditor
+namespace GhostHunterCorp_SaveEditor
 {
     public class Player
     {

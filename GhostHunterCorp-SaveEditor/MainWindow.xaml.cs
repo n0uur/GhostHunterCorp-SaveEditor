@@ -17,7 +17,7 @@ using System.Windows.Shapes;
 using Microsoft.Win32;
 using System.Text.RegularExpressions;
 
-namespace GhostHunterCrop_SaveEditor
+namespace GhostHunterCorp_SaveEditor
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

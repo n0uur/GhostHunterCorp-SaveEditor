@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace GhostHunterCrop_SaveEditor
+namespace GhostHunterCorp_SaveEditor
 {
     public struct EncryptedText
     {

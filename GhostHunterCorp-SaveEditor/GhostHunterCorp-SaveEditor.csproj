@@ -3,7 +3,7 @@
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
         <TargetFramework>net5.0-windows</TargetFramework>
-        <RootNamespace>GhostHunterCrop_SaveEditor</RootNamespace>
+        <RootNamespace>GhostHunterCorp_SaveEditor</RootNamespace>
         <UseWPF>true</UseWPF>
         <Platforms>AnyCPU;x64</Platforms>
     </PropertyGroup>
