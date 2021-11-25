@@ -74,8 +74,16 @@ namespace GhostHunterCorp_SaveEditor
 
         private void MenuItem_Open_Click(object sender, RoutedEventArgs e)
         {
+            string defaultSavePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile).ToString() + @"\AppData\LocalLow\StudioGoupil\Ghost Hunters Corp";
+
             OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.RestoreDirectory = true;
             openFileDialog.Filter = "Ghost Hunter Save files (*.sav)|*.sav|All files (*.*)|*.*";
+            if(Directory.Exists(defaultSavePath))
+            {
+                openFileDialog.InitialDirectory = defaultSavePath;
+            }
+
             if (openFileDialog.ShowDialog() == true)
             {
                 SaveData? saveData = SaveManager.LoadSaveFromFile(openFileDialog.FileName);
