@@ -5,9 +5,15 @@ Ghost Hunter Corp Game Save Editor.
 
 ## How to use
 1. Open save file.
-2. Edit save file.
-3. Save your file back to game directory.
-4. Enjoy your easy life :smile:
+
+Game's save file located at:
+```
+%userprofile%\AppData\LocalLow\StudioGoupil\Ghost Hunters Corp
+```
+
+3. Edit save file.
+4. Save your file back to game directory.
+5. Enjoy your easy life :smile:
 
 __Backup your original `save.sav` file before doing anything__
 
@@ -16,8 +22,8 @@ __Backup your original `save.sav` file before doing anything__
 - :heavy_check_mark: Showing Estimated Player Levels
 - :heavy_check_mark: Edit Items Amount In Inventory
 - :heavy_check_mark: Maxed out all items
-- [:rocket: In Progress] Select Player Character
-- [:rocket: In Progress] Select Player Color
+- [:skull:] Select Player Character
+- [:skull:] Select Player Color
 
 ## Disclaimer
 ```
