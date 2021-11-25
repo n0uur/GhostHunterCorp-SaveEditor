@@ -2,9 +2,10 @@
 Ghost Hunter Corp Game Save Editor.
 
 ## How to use
-1. Open save file.
+1. Download save editor from [release](https://github.com/n0uur/GhostHunterCorp-SaveEditor/releases)
+2. Open game's save file, normally named `save.sav`
 
-Game's save file located at:
+It will be located at:
 ```
 %userprofile%\AppData\LocalLow\StudioGoupil\Ghost Hunters Corp
 ```
