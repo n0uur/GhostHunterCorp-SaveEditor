@@ -54,7 +54,7 @@ namespace GhostHunterCorp_SaveEditor
         {
             "TORCH", "BIG_TORCH", "TRIPOD", "PHOTO", "CAMERA", "CAMERA_TRIPOD", "MEL", "TEMP", "EMF", "FREQ", "OCCULT",
             "BOOK", "SPIRITBOX", "POLAROID", "BOOK_EXORCISM", "TIGER_EYE", "WATER", "INCENSE", "SEL", "MARIE", "BEAM",
-            "CRUCIFIX", "ATTK_SCAN", "FUSIL"
+            "CRUCIFIX", "ATTK_SCAN", "FUSIL", "BTORCH"
         };
 
         public static List<Item> GetBaseList()
