@@ -1,5 +1,3 @@
-# Forgive me for name typos 😥
-
 # GhostHunterCorp-SaveEditor
 Ghost Hunter Corp Game Save Editor.
 
