@@ -1,5 +1,5 @@
 # GhostHunterCorp-SaveEditor
-Ghost Hunter Corp Game Save Editor.
+Ghost Exorcism INC. aka. Ghost Hunter Corp (old name) Game Save Editor.
 
 ## How to use
 1. Download save editor from [release](https://github.com/n0uur/GhostHunterCorp-SaveEditor/releases)
