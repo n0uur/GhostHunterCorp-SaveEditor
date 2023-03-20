@@ -39,5 +39,3 @@ click `Issues` and create new one. I will answer if I see.
 
 ![Program screenshot](https://i.imgur.com/7qXeCjQ.png)
 
-## License
-### ? NO!
