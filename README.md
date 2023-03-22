@@ -1,43 +1,44 @@
-# GhostHunterCorp-SaveEditor
-Ghost Exorcism INC. aka. Ghost Hunter Corp (old name) Game Save Editor.
+# GhostExorcismInc-SaveEditor
+
+A Save Editor for Ghost Exorcism INC. (formerly Ghost Hunter Corp) game.
 
 ## How to use
-1. Download save editor from [release](https://github.com/n0uur/GhostHunterCorp-SaveEditor/releases)
-2. Open game's save file, normally named `save.sav`
 
-It will be located at:
+1. Download the Save Editor from the [releases](https://github.com/n0uur/GhostHunterCorp-SaveEditor/releases) page.
+2. Open the game's save file, typically named `Gex0000.save`.
+
+The save file is usually located at:
+
 ```
-%userprofile%\AppData\LocalLow\StudioGoupil\Ghost Hunters Corp
-```
-
-3. Edit save file.
-4. Save your file back to game directory.
-5. Enjoy your easy life :smile:
-
-__Backup your original `save.sav` file before doing anything__
-
-## Planed features
-- :heavy_check_mark: Edit Player Name, Money, EXP
-- :heavy_check_mark: Showing Estimated Player Levels
-- :heavy_check_mark: Edit Items Amount In Inventory
-- :heavy_check_mark: Maxed out all items
-- [:skull:] Select Player Character
-- [:skull:] Select Player Color
-
-## Disclaimer
-```
-Nothing
+%userprofile%\AppData\LocalLow\StudioGoupil\Ghost Exorcism Inc
 ```
 
-## Contribution
-PR are always welcome :)
+3. Edit the save file as desired.
+4. Save the modified file back to the game directory.
+5. Enjoy an easier gaming experience!
+
+## Features
+
+- :heavy_check_mark: Edit Player Name, Money, and EXP
+- :heavy_check_mark: Modify Item Quantities in Inventory
+- :heavy_check_mark: Edit Owned Locations
+- :heavy_check_mark: Max out all items and locations
+- :heavy_check_mark: Attributes other than Name, Money, and EXP are automatically handled when saving back to the file
+
+## Notes
+
+- The Save Editor supports editing only Name, Money, EXP, Items, and Locations. Other attributes will be automatically handled and saved back to the file without any changes.
+- This will be the last update for the save file structure. If there are new items or locations, updates will be provided.
+- To the game developer: Please fix your game, not your save files. :)
+
+## Contributing
+
+Pull requests are always welcome!
 
 ## Support
-click `Issues` and create new one. I will answer if I see.
+
+Click on `Issues` and create a new one. I'll respond when I can.
 
 ## Screenshot
 
-![Program screenshot](https://i.imgur.com/7qXeCjQ.png)
-
-## License
-### ? NO!
+![Program screenshot](https://user-images.githubusercontent.com/50010805/226767014-2bc3c961-86ce-4be6-aa2f-933009125ead.png)
