@@ -40,5 +40,4 @@ Pull requests are always welcome!
 Click on `Issues` and create a new one. I'll respond when I can.
 
 ## Screenshot
-
 ![Program screenshot](https://user-images.githubusercontent.com/50010805/226767014-2bc3c961-86ce-4be6-aa2f-933009125ead.png)
