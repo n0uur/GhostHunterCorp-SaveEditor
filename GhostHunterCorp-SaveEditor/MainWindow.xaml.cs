@@ -1,19 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Microsoft.Win32;
 using System.Text.RegularExpressions;
 
@@ -26,6 +16,7 @@ namespace GhostHunterCorp_SaveEditor
     {
         public Player player;
         public List<Item> items;
+        public List<Location> locations;
 
         public Dictionary<double, string> MyDictionary { get; set; }
 
@@ -39,7 +30,11 @@ namespace GhostHunterCorp_SaveEditor
 
             this.items = Item.GetBaseList();
 
+            this.locations = Location.GetBaseList();
+
             itemsList.DataContext = this.items;
+
+            ownedLocationsList.DataContext = this.locations;
 
             txtExp.TextChanged += experienceTextChange;
 
@@ -50,36 +45,41 @@ namespace GhostHunterCorp_SaveEditor
         {
             if (txtExp.Text.Equals(""))
                 return;
-            this.player.Exp = UInt32.Parse(txtExp.Text);
-            txtLvl.Text = this.player.GetLevel().ToString();
+            this.player.Exp = txtExp.Text;
+            //txtLvl.Text = this.player.GetLevel().ToString();
         }
 
-        public void updateObject()
+        public void updateObjects()
         {
             this.player.Name = txtName.Text;
-            this.player.Exp = UInt32.Parse(txtExp.Text);
-            this.player.Money = UInt32.Parse(txtMoney.Text);
+            this.player.Exp = txtExp.Text;
+            this.player.Money = txtMoney.Text;
+
+            this.player.OwnedItems = Item.ToString(this.items);
+            this.player.OwnedLocation = Location.ToString(this.locations);
         }
 
         public void updateTextFields()
         {
             txtName.Text = this.player.Name;
-            txtExp.Text = this.player.Exp.ToString();
-            txtMoney.Text = this.player.Money.ToString();
-            txtSkin.Text = this.player.Skin.ToString();
-            txtColor.Text = this.player.Color;
+            txtExp.Text = this.player.Exp;
+            txtMoney.Text = this.player.Money;
+            //txtExp.Text = this.player.Exp.ToString();
+            //txtMoney.Text = this.player.Money.ToString();
+            //txtColor.Text = this.player.Color;
 
             itemsList.Items.Refresh();
+            ownedLocationsList.Items.Refresh();
         }
 
         private void MenuItem_Open_Click(object sender, RoutedEventArgs e)
         {
-            string defaultSavePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile).ToString() + @"\AppData\LocalLow\StudioGoupil\Ghost Hunters Corp";
+            string defaultSavePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile).ToString() + @"\AppData\LocalLow\StudioGoupil\Ghost Exorcism Inc";
 
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.RestoreDirectory = true;
-            openFileDialog.Filter = "Ghost Hunter Save files (*.sav)|*.sav|All files (*.*)|*.*";
-            if(Directory.Exists(defaultSavePath))
+            openFileDialog.Filter = "Ghost Hunter Save files (*.save)|*.save|All files (*.*)|*.*";
+            if (Directory.Exists(defaultSavePath))
             {
                 openFileDialog.InitialDirectory = defaultSavePath;
             }
@@ -94,8 +94,12 @@ namespace GhostHunterCorp_SaveEditor
                     return;
                 }
 
+                File.Copy(openFileDialog.FileName, openFileDialog.FileName + ".bak", true);
+
                 this.player = saveData.Value.Player;
-                Item.UpdateList(this.items, saveData.Value.Items);
+                Item.UpdateList(this.items, Item.Parse(player.OwnedItems));
+
+                this.locations = Location.Parse(player.OwnedLocation, this.locations);
 
                 this.updateTextFields();
             }
@@ -103,14 +107,14 @@ namespace GhostHunterCorp_SaveEditor
 
         private void MenuItem_Save_Click(object sender, RoutedEventArgs e)
         {
-            this.updateObject();
+            this.updateObjects();
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Ghost Hunter Save files (*.sav)|*.sav|All files (*.*)|*.*";
-            saveFileDialog.FileName = "save.sav";
+            saveFileDialog.Filter = "Ghost Hunter Save files (*.save)|*.save|All files (*.*)|*.*";
+            saveFileDialog.FileName = "Gex0000.save";
             if (saveFileDialog.ShowDialog() == true)
             {
-                if (SaveManager.SaveFile(saveFileDialog.FileName, this.player, this.items))
+                if (SaveManager.SaveFile(saveFileDialog.FileName, this.player))
                     MessageBox.Show("File was saved successfully!", "Saved!", MessageBoxButton.OK,
                         MessageBoxImage.Information);
                 else
@@ -129,7 +133,11 @@ namespace GhostHunterCorp_SaveEditor
         {
             foreach (Item item in this.items)
             {
-                item.Amount = 999;
+                item.Amount = 99;
+            }
+            foreach (Location location in this.locations)
+            {
+                location.IsOwned = true;
             }
 
             this.updateTextFields();

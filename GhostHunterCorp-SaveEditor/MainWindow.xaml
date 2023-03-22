@@ -6,56 +6,64 @@
         xmlns:local="clr-namespace:GhostHunterCorp_SaveEditor"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="Ghost Hunter, Corp. - Save Editor" Height="650" Width="500" Name="mainWindow"
+        Title="Ghost Hunter, Corp. - Save Editor" Height="650" Width="650" Name="mainWindow"
         >
     <Grid RenderTransformOrigin="0,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="31*"/>
             <ColumnDefinition Width="19*"/>
         </Grid.ColumnDefinitions>
-        <Menu Width="900" Grid.ColumnSpan="2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.ColumnSpan="2" Grid.RowSpan="2">
             <MenuItem Header="_File">
                 <MenuItem Header="_Open" Click="MenuItem_Open_Click"/>
                 <MenuItem Header="_Save" Click="MenuItem_Save_Click"/>
             </MenuItem>
         </Menu>
-        <GroupBox Margin="10,23,70,127">
+        <GroupBox Margin="10,23,163,85" Grid.RowSpan="2">
             <GroupBox.Header>
                 Player Data
             </GroupBox.Header>
 
-            <StackPanel Orientation="Vertical" RenderTransformOrigin="0,0.5" Height="448" >
+            <StackPanel Orientation="Vertical" RenderTransformOrigin="0,0.5" Height="503" >
                 <Label Content="_Name:" Target="{Binding ElementName=txtName}" />
                 <TextBox Name="txtName" />
                 <Label Content="_Experience:" Target="{Binding ElementName=txtExp}" />
                 <TextBox Name="txtExp" PreviewTextInput="NumberValidationTextBox" />
-                <Label Content="_~Level:" />
-                <TextBox Name="txtLvl" IsEnabled="False" />
                 <Label Content="_Money:" Target="{Binding ElementName=txtMoney}" />
                 <TextBox Name="txtMoney" PreviewTextInput="NumberValidationTextBox" />
-                <Label Content="_Color:" Target="{Binding ElementName=txtColor}" />
-                <TextBox Name="txtColor" IsEnabled="False" />
-                <Label Content="_Skin:" Target="{Binding ElementName=txtSkin}" />
-                <TextBox Name="txtSkin" IsEnabled="False" />
             </StackPanel>
         </GroupBox>
-        <GroupBox Margin="10,512,70,10">
+        <GroupBox Margin="10,232,168,15" Grid.Row="1">
             <GroupBox.Header>
                 Macro
             </GroupBox.Header>
 
-            <StackPanel Orientation="Vertical" RenderTransformOrigin="0,0.5" Height="87" >
+            <StackPanel Orientation="Vertical" RenderTransformOrigin="0,0.5" Height="52" Margin="0,0,-2,0" >
                 <Button Click="Button_Macro_Max_Items_Click">Max All Items</Button>
             </StackPanel>
         </GroupBox>
-        
 
-        <GroupBox  RenderTransformOrigin="0,0.5" Grid.ColumnSpan="2" Margin="240,23,0,10">
+        <GroupBox RenderTransformOrigin="0,0.5" Grid.ColumnSpan="2" Grid.Row="0" Margin="240,23,0,10">
             <GroupBox.Header>
                 Items Data
             </GroupBox.Header>
-
             <DataGrid Name="itemsList" ItemsSource="{Binding}" CanUserAddRows="False">
+            </DataGrid>
+        </GroupBox>
+
+        <GroupBox Grid.ColumnSpan="2" Grid.Row="1" Margin="240,0,0,10">
+            <GroupBox.Header>
+                Owned Locations
+            </GroupBox.Header>
+            <DataGrid Name="ownedLocationsList" ItemsSource="{Binding}" CanUserAddRows="False" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Location" Binding="{Binding Name}" />
+                    <DataGridCheckBoxColumn Header="Owned" Binding="{Binding IsOwned}" />
+                </DataGrid.Columns>
             </DataGrid>
         </GroupBox>
     </Grid>
