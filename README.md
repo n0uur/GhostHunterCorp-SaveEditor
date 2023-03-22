@@ -2,6 +2,16 @@
 
 A Save Editor for Ghost Exorcism INC. (formerly Ghost Hunter Corp) game.
 
+## License
+
+This project is licensed under the GNU General Public License v3.0 (GPL-3.0). For more information, please refer to the [LICENSE](LICENSE) file.
+
+If you use this code in your projects or publish it on other websites, please credit or refer to this repo. I put a lot of valuable time reverse-engineering all of this by myself :)
+
+## ⚠️ Warning
+
+Using this Save Editor may affect your gaming experience and could potentially lead to issues with the game. Use it at your own risk.
+
 ## How to use
 
 1. Download the Save Editor from the [releases](https://github.com/n0uur/GhostHunterCorp-SaveEditor/releases) page.
